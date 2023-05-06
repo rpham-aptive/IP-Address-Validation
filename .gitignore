@@ -1,0 +1,38 @@
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# Maven build directory
+target/
+
+# Gradle build directory
+build/
+
+# Compiled JAR files
+*.jar
+
+# Eclipse metadata
+.metadata/
+
+# IntelliJ IDEA metadata
+out/
+*.iml
+*.ipr
+*.iws
+
+# Operating System temporary files
+.DS_Store
+Thumbs.db

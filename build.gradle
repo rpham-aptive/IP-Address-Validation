@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.2'
+    implementation 'com.amazonaws:aws-lambda-java-events:3.11.1'
+    runtimeOnly 'com.amazonaws:aws-lambda-java-log4j2:1.5.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
+    implementation 'redis.clients:jedis:3.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task packageBig(type: Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.runtimeClasspath
+    }
+}
+
+task packageLibs(type: Zip) {
+    into('java/lib') {
+        from configurations.runtimeClasspath
+    }
+}
+
+task packageSmall(type: Zip) {
+    from compileJava
+    from processResources
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+build.dependsOn packageBig

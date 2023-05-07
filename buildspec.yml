@@ -17,6 +17,8 @@ phases:
       - echo "Running ls"
       - ls
       - ./gradlew clean build
+      - cp build/distributions/*.zip Lambda.zip
+
 
   post_build:
     commands:
@@ -24,4 +26,4 @@ phases:
 
 artifacts:
   files:
-    - distributions/Lambda.zip
+    - Lambda.zip

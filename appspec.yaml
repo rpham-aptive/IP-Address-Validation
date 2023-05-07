@@ -4,3 +4,4 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: JavaAPI
+        CurrentVersion: 1  # Ensure a valid version number is specified

@@ -6,4 +6,4 @@ Resources:
         Name: JavaAPI
         Alias: CodeDeployVersion
         CurrentVersion: 1  # Ensure a valid version number is specified
-        TargetVersion: 1
+        TargetVersion: 2

@@ -76,7 +76,7 @@ public class LambdaHandler implements RequestHandler<APIGatewayV2HTTPEvent, APIG
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         response.setHeaders(headers);
-        response.setBody("Bad Input.");
+        response.setBody("Bad Input. This is Version 2");
         return response;
     }
 

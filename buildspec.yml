@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - ./gradlew build  # Use the Gradle wrapper to build your project
+      - ./gradlew build  # Use the Gradle wrapper to build your project.
   post_build:
     commands:
       - echo Build completed on `date`

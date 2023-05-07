@@ -8,9 +8,16 @@ phases:
     commands:
       - chmod +x gradlew  # Add this line to make the gradlew script executable
   build:
+    run-as: root
     commands:
+      # Build checkHyperScience function
+      - echo "Starting build..."
       - echo Build started on `date`
-      - ./gradlew build  # Use the Gradle wrapper to build your project
+      - cd ${CODEBUILD_SRC_DIR}
+      - echo "Running ls"
+      - ls
+      - ../gradlew clean build
+
   post_build:
     commands:
       - echo Build completed on `date`

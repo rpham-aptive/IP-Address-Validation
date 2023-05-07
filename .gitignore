@@ -21,9 +21,6 @@ target/
 # Gradle build directory
 build/
 
-# Compiled JAR files
-*.jar
-
 # Eclipse metadata
 .metadata/
 

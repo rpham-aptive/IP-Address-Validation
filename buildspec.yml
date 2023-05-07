@@ -21,8 +21,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - zip -r Lambda.zip build/*  # Package the build artifacts into a zip file
-
+      
 artifacts:
   files:
     - Lambda.zip

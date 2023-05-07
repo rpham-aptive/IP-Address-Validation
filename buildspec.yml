@@ -4,6 +4,9 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+  pre_build:
+    commands:
+      - chmod +x gradlew  # Add this line to make the gradlew script executable
   build:
     commands:
       - echo Build started on `date`

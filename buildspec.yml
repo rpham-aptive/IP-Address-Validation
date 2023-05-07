@@ -2,16 +2,12 @@ version: 0.2
 
 phases:
   install:
-    run-as: root
     runtime-versions:
       java: corretto11
-    commands:
-      - echo Installing Gradle wrapper
-      - ./gradlew wrapper --gradle-version 6.3  # Generate Gradle wrapper files
   build:
     commands:
       - echo Build started on `date`
-      - ./gradlew build  # Use the Gradle wrapper to build your project.
+      - ./gradlew build  # Use the Gradle wrapper to build your project
   post_build:
     commands:
       - echo Build completed on `date`
@@ -19,4 +15,4 @@ phases:
 
 artifacts:
   files:
-    - myproject.zip
+    - Lambda.zip

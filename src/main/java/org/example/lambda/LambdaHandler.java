@@ -74,7 +74,7 @@ public class LambdaHandler implements RequestHandler<APIGatewayV2HTTPEvent, APIG
     private APIGatewayV2HTTPResponse generateBadRequestResponse() {
         APIGatewayV2HTTPResponse response = new APIGatewayV2HTTPResponse();
         response.setIsBase64Encoded(false);
-        response.setStatusCode(401);
+        response.setStatusCode(400);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         response.setHeaders(headers);

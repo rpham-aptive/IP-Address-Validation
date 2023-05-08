@@ -32,3 +32,5 @@ artifacts:
   files:
     - Lambda.zip
     - appspec.yaml
+  name:
+    ArtifactName

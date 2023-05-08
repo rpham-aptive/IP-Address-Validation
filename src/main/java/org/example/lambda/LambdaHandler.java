@@ -2,7 +2,6 @@ package org.example.lambda;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,9 +38,11 @@ public class LambdaHandler implements RequestHandler<APIGatewayV2HTTPEvent, APIG
         jedis.close();
 
         if (value == null) {
+            System.out.println("value is null so return IP is not found.");
             APIGatewayV2HTTPResponse notFoundResponse = generateResponseIpIsNotFound();
             return notFoundResponse;
         } else {
+            System.out.println("IP was found. Return that it is blacklisted.");
             APIGatewayV2HTTPResponse isFoundResponse = generateResponseIpIsFound();
             return isFoundResponse;
         }
@@ -76,7 +77,7 @@ public class LambdaHandler implements RequestHandler<APIGatewayV2HTTPEvent, APIG
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         response.setHeaders(headers);
-        response.setBody("Bad Input. This is Version 2");
+        response.setBody("Bad Input. This is Version 3");
         return response;
     }
 

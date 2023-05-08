@@ -22,6 +22,7 @@ public class LambdaHandler implements RequestHandler<APIGatewayV2HTTPEvent, APIG
         try {
             input = new ObjectMapper().readValue(body, InputModel.class);
         } catch (IOException e) {
+            System.out.println("Unable to parse the input. Returning bad request response.");
             APIGatewayV2HTTPResponse badRequestResponse = generateBadRequestResponse();
             return badRequestResponse;
         }
